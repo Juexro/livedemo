@@ -6,16 +6,15 @@ import {
   MenuUnfoldOutlined
 } from '@ant-design/icons';
 import { Button, Layout, Menu, theme } from 'antd';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
 const { Header, Sider, Content } = Layout;
 
 const MainLayout: React.FC = () => {
   const [collapsed, setCollapsed] = useState(false);
-  const {
-    token: { colorBgContainer, borderRadiusLG },
-  } = theme.useToken();
+  const { token: { colorBgContainer, borderRadiusLG } } = theme.useToken();
+  const location = useLocation();
 
   return (
     <Layout id='app'>
@@ -26,10 +25,10 @@ const MainLayout: React.FC = () => {
         <Menu
           theme="light"
           mode="inline"
-          defaultSelectedKeys={['1']}
+          defaultSelectedKeys={[location.pathname]}
           items={[
             {
-              key: 'codemirror-iecst-editor',
+              key: '/codemirror-iecst-editor',
               icon: <CodepenOutlined />,
               label: <Link to={"/codemirror-iecst-editor"}>codemirror-iecst</Link>,
             },

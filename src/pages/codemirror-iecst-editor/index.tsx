@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { iecst } from 'codemirror-iecst';
+import { iecst, autocomplete } from 'codemirror-iecst';
 import { basicSetup, EditorView } from 'codemirror';
 import { EditorState } from '@codemirror/state';
 
@@ -27,15 +27,15 @@ PROGRAM ST_Union
     nWord_Low : WORD;
   END_VAR
 
-  nByte_Low:=34;
-  nByte_High:=12;
-  Un_Word1.nByte[0]:=nByte_Low;
-  Un_Word1.nByte[1]:=nByte_High;
+  nByte_Low := 34;
+  nByte_High := 12;
+  Un_Word1.nByte[0] := nByte_Low;
+  Un_Word1.nByte[1] := nByte_High;
 
-  nWord_Low:=5678;
-  nWord_High:=1234;
-  Un_Dword1.nWord[0]:=nWord_Low;
-  Un_Dword1.nWord[1]:=nWord_High;
+  nWord_Low := 5678;
+  nWord_High := 1234;
+  Un_Dword1.nWord[0] := nWord_Low;
+  Un_Dword1.nWord[1] := nWord_High;
 
 
   (*nByte_Low:=16#34;
@@ -73,9 +73,9 @@ PROGRAM WSTRING_TEST
     S1 : STRING := 'string@';
   END_VAR
 
-  INT1:=LEN(WS2);
-  INT2:=LEN(S1);
-  INT3:=LEN(WS1);
+  INT1 := LEN(WS2);
+  INT2 := LEN(S1);
+  INT3 := LEN(WS1);
 
 END_PROGRAM
 
@@ -115,23 +115,21 @@ PROGRAM pointer_test
     DUT_ARRY3 : ARRY3;
   END_VAR
 
-  pa:= ADR(a);
-  b:= pa^;
-  c:= VAL(pa);
+  pa := ADR(a);
+  b := pa^;
+  c := VAL(pa);
 
-  px:= ADR(x);
-  y:= px^;
-  z:= VAL(px);
-  ppx:=ADR(px);
+  px := ADR(x);
+  y := px^;
+  z := VAL(px);
+  ppx := ADR(px);
   yy:=ppx^^;
 
   FB_ADD(IN1 := 10, IN2 := 20);
 
-  PV:=DUT_ARRY3[4];
-  pFB:=ADR(FB_ADD);
-  FBV:=pFB^.OUT;
-
-
+  PV := DUT_ARRY3[4];
+  pFB := ADR(FB_ADD);
+  FBV := pFB^.OUT;
 
 END_PROGRAM
 
@@ -146,7 +144,6 @@ CONFIGURATION config
     PROGRAM MainTask_10635_WSTRING_TEST_1 WITH MainTask : WSTRING_TEST;
   END_RESOURCE
 END_CONFIGURATION
-
 `;
 
 const StructuredTextEditor: React.FC = () => {
@@ -157,7 +154,8 @@ const StructuredTextEditor: React.FC = () => {
       doc: example,
       extensions: [
         basicSetup,
-        iecst()
+        iecst(),
+        autocomplete()
       ]
     });
     const editor = new EditorView({

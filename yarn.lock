@@ -2993,10 +2993,10 @@ coa@^2.0.2:
     chalk "^2.4.1"
     q "^1.1.2"
 
-codemirror-iecst@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/codemirror-iecst/-/codemirror-iecst-1.0.0.tgz#9f53ab105d5836d8393a76871fded1d8980e0425"
-  integrity sha512-X5LQftzh+cnGniKoNmHddp/DyGPVHU3aH/QsSOw9g4vi+C/OS1Xra/ogwjgMWwPGSsabm9El+qLXEH67Zj4BKQ==
+codemirror-iecst@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/codemirror-iecst/-/codemirror-iecst-1.0.1.tgz#6acf63dedd973d6362f7d9498d2e21b88eca9671"
+  integrity sha512-GGu4KfLYFlTOxtphDLlLo78kfOgs8EP7DCsjJtnHHqXGxbIeqcXNRGpsyE/xCBPUUGOwEqNUoaDpTYfSlL+M2Q==
 
 codemirror@^6.0.1:
   version "6.0.1"
