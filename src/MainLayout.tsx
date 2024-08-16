@@ -20,7 +20,7 @@ const MainLayout: React.FC = () => {
     <Layout id='app'>
       <Sider trigger={null} collapsible collapsed={collapsed} theme="light">
         <div className="logo">
-          <JavaScriptOutlined /> Live Demo
+          <JavaScriptOutlined /> {!collapsed && 'Live Demo'}
         </div>
         <Menu
           theme="light"

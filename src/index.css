@@ -44,10 +44,11 @@ html, body, #root, #app {
   margin: 16px;
   border-radius: 6px;
   line-height: 32px;
-  padding-left: 12px;
+  padding-left: 16px;
   text-shadow:0px 1px 0px #c0c0c0,
     0px 2px 0px #b0b0b0,
     0px 3px 0px #a0a0a0,
     0px 4px 0px #909090,
     0px 5px 10px rgba(0, 0, 0, .9);
+  overflow: hidden;
 }
