@@ -1,7 +1,6 @@
-import React, { useLayoutEffect, useState } from 'react';
+import React, { useState } from 'react';
 import {
   CodepenOutlined,
-  EyeOutlined,
   GithubOutlined,
   JavaScriptOutlined,
   MailOutlined,
@@ -18,11 +17,6 @@ const MainLayout: React.FC = () => {
   const [collapsed, setCollapsed] = useState(false);
   const { token: { colorBgContainer, borderRadiusLG } } = theme.useToken();
   const location = useLocation();
-
-  useLayoutEffect(() => {
-    // @ts-ignore
-    window.bszCaller.fetch("//busuanzi.ibruce.info/busuanzi?jsonpCallback=BusuanziCallback", function(a) { window.bszTag.texts(a); window.bszTag.shows(); });
-  }, []);  
 
   return (
     <Layout id='app'>
@@ -70,9 +64,6 @@ const MainLayout: React.FC = () => {
         </Content>
         <Layout.Footer style={{ textAlign: 'center', paddingTop: '0' }}>
           <Space size={32}>
-            <span>
-              <EyeOutlined /> <span id="busuanzi_value_site_pv"><i className="fa fa-spinner"></i></span>
-            </span>
             <Space>
               <span>&copy; 2024 Juexro</span>
               <a href='https://github.com/Juexro' target='_blank' rel='noreferrer'><GithubOutlined /></a>

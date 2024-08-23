@@ -1,7 +1,7 @@
 import React from 'react';
 import { createBrowserRouter } from 'react-router-dom';
 import MainLayout from '../MainLayout';
-import StructuredTextEditor from '../pages/codemirror-iecst-editor';
+import CodemirrorIECSTPage from '../pages/codemirror-iecst';
 
 const router = createBrowserRouter([
   {
@@ -10,7 +10,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: 'codemirror-iecst-editor',
-        element: <StructuredTextEditor />
+        element: <CodemirrorIECSTPage />
       }
     ]
   }

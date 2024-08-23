@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
-import { iecst, autocomplete } from 'codemirror-iecst';
-import { basicSetup, EditorView } from 'codemirror';
+import { setup } from 'codemirror-iecst';
+import { EditorView } from 'codemirror';
 import { EditorState } from '@codemirror/state';
 
 const example = `TYPE
@@ -146,16 +146,14 @@ CONFIGURATION config
 END_CONFIGURATION
 `;
 
-const StructuredTextEditor: React.FC = () => {
+const CodemirrorIECSTEditor: React.FC = () => {
   const editorRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const state = EditorState.create({
       doc: example,
       extensions: [
-        basicSetup,
-        iecst(),
-        autocomplete()
+        setup()
       ]
     });
     const editor = new EditorView({
@@ -172,4 +170,4 @@ const StructuredTextEditor: React.FC = () => {
   );
 };
 
-export default StructuredTextEditor;
+export default CodemirrorIECSTEditor;
